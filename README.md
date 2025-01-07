@@ -1,1 +1,1 @@
-﻿# CRUD utilizando NodeJS e JSON para verificação de dados de backend
+CRUD utilizando NodeJS e JSON para verificação de dados de backend
