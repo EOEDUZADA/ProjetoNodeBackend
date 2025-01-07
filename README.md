@@ -1,1 +1,15 @@
-CRUD utilizando NodeJS e JSON para verificação de dados de backend
+API para realizar as seguintes funcoes
+
+CRUD para proprietários
+
+CRUD para Produtos
+
+Pesquisar proprietário pelo pedaco do nome
+
+Pesquisar produto de maior quantidade
+
+Pesquisar produto de maior valor
+
+Pesquisar produto de maior Valor total 
+
+Pesquisar o proprietário com o maior número de produtos
