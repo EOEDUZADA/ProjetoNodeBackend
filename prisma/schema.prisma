@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Produto {
+  id              Int       @id @default(autoincrement())  // Chave primária
+  descricao       String    // Descrição do produto
+  quantidade      String    @unique // A quantidade é única para cada produto (presumo que seja algum tipo de código único)
+  valor           Float     // Valor do produto
+  proprietario_id Int       // Chave estrangeira que referencia o 'User'
+  
+  // Relacionamento com o modelo Proprietario (assumindo que Proprietario é um modelo User, por exemplo)
+  proprietario    Proprietario @relation(fields: [proprietario_id], references: [id])
+
+}
+
+model Proprietario {
+  id        Int      @id @default(autoincrement())  // Chave primária
+  nome      String   // Nome do proprietário
+  email     String   @unique // Email único do proprietário
+  produtos  Produto[]  // Relacionamento 1:N - Um Proprietário pode ter vários Produtos
+}

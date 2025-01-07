@@ -1,0 +1,17 @@
+{
+  "name": "ds1_api_prisma",
+  "version": "1.0.0",
+  "description": "My project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Eduardo Silva",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "express": "^4.21.1",
+    "prisma": "^5.21.0"
+  }
+}
